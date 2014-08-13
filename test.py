@@ -27,4 +27,4 @@ class TestDT(unittest.TestCase):
     for n in xrange(100):
       x = np.random.standard_normal((9,13))
       xs,i = dt.compute(x)
-      self.assertTrue(x.min() < xs.min())
+      self.assertTrue(xs.min() >= x.min())

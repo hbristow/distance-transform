@@ -20,4 +20,5 @@ extensions = [
 setup(
   name='Generalized Distance Transforms of Sampled Functions',
   ext_modules = cythonize(extensions),
+  test_suite  = 'test'
 )
