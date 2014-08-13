@@ -28,7 +28,7 @@ y,i = dt.compute(x)  # compute the distance transform across ALL dimensions
 y,i = dt.compute(x, axes=(0,1)) # Compute across the (0,1) axes in the tensor
 ```
 
-You can also change the distance function, or paramters used:
+You can also change the distance function, or parameters used:
 
 ```python
 y,i = dt.compute(x, f=dt.L2(0.01)) # reduce the distance penalty
@@ -37,8 +37,8 @@ y,i = dt.compute(x, f=dt.L2(0.01)) # reduce the distance penalty
 Installing
 ----------
 
-Installing the package is as simple as:
+Install the package using pip:
 
     pip install git+https://github.com/hbristow/distance-transform
 
-You will need Cython to build the extensions
+You will need Cython to build the extensions.

@@ -101,6 +101,9 @@ def compute(x, axes=None, f=L2):
 # ----------------------------------------------------------------------------
 @cython.boundscheck(False)
 cdef _compute1d(
+    ndarray[double] x, DistanceFunction f,  # input array and distance function
+    ndarray[double] min, ndarray[long] arg, # output arrays
+    ndarray[double] z, ndarray[long] v):    # working buffers
   """Low-level 1D distance transform
 
   This Cython function provides the implementation of the 1D distance transform.
@@ -118,10 +121,6 @@ cdef _compute1d(
     z (ndarray): A double-precision working buffer of length N+1
     v (ndarray): An integer-precision working buffer of length N
   """
-
-  ndarray[double] x, DistanceFunction f,  # input array and distance function
-  ndarray[double] min, ndarray[long] arg, # output arrays
-  ndarray[double] z, ndarray[long] v):    # working buffers
 
   # predeclare object types
   cdef int N = x.shape[0]
